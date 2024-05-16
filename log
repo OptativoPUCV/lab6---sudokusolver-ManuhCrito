@@ -24,3 +24,9 @@ sudoku.c:89:54: error: invalid type argument of ‘->’ (have ‘int’)
       |                                                      ^~
 Compilation failed
 c8fefa7
+Thu 16 May 2024 07:32:53 PM UTC: 
+ sudoku.c | 38 ++++----------------------------------
+ 1 file changed, 4 insertions(+), 34 deletions(-)
+ tests:  2|4
+total_score: 15/70
+eac1b7d
