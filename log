@@ -131,3 +131,15 @@ sudoku.c:185:9: error: implicit declaration of function ‘freeList’; did you 
 cc1: all warnings being treated as errors
 Compilation failed
 77dc1f8
+Thu 16 May 2024 08:16:11 PM UTC: 
+ sudoku.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:169:13: error: implicit declaration of function ‘isEmpty’; did you mean ‘is_empty’? [-Werror=implicit-function-declaration]
+  169 |     while (!isEmpty(stack)) {
+      |             ^~~~~~~
+      |             is_empty
+cc1: all warnings being treated as errors
+Compilation failed
+69893ad

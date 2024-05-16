@@ -182,7 +182,12 @@ Node* DFS(Node* n, int* cont) {
             temp = next(adj_nodes);
         }
 
-        freeList(adj_nodes); // Liberar la lista de nodos adyacentes
+        Node *tempElim = first(adj_nodes);
+        while (tempElim != NULL)
+            {
+                free(tempElim);
+                tempElim = next(adj_nodes);
+            }
         (*cont)++;
     }
     return NULL;
