@@ -14,3 +14,13 @@ Thu 16 May 2024 07:06:14 PM UTC:
  tests:  2|4
 total_score: 15/70
 ae32a0d
+Thu 16 May 2024 07:28:22 PM UTC: 
+ sudoku.c | 42 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:89:54: error: invalid type argument of ‘->’ (have ‘int’)
+   89 |                         if (m != row && n != col && n->sudo[m][n] == data)
+      |                                                      ^~
+Compilation failed
+c8fefa7

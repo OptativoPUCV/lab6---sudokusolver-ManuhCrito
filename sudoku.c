@@ -53,6 +53,48 @@ void print_node(Node* n)
 
 int is_valid(Node* n)
 {
+   int data = n->sudo[0][0];
+   for (int i = 0 ; i < 9 ; i++)
+      {
+         for (int j = 0 ; j < 9 ; j++)
+            {
+               data = n->sudo[i][j];
+               if (data == 0)
+               {
+                  int row = i;
+                  int col = j;
+
+                  for (int c = 0; c < 9; c++)
+                  {
+                     if (c != col && n->sudo[row][c] == data)
+                     {
+                        return 0;
+                     }
+                  }
+
+                  for (int r = 0; r < 9; r++)
+                  {
+                     if (r != row && n->sudo[r][col] == data)
+                     {
+                        return 0;
+                     }
+                  }
+
+                  int startRow = 3 * (row / 3);
+                  int startCol = 3 * (col / 3);
+                  for (int m = startRow; m < startRow + 3; m++)
+                  {
+                     for (int n = startCol; n < startCol + 3; n++)
+                     {
+                        if (m != row && n != col && n->sudo[m][n] == data)
+                        {
+                           return 0;
+                        }
+                     }
+                  }
+               }
+            }
+      }
    return 1;
 }
 
