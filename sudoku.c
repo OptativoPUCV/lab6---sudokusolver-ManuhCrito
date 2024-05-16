@@ -51,45 +51,74 @@ void print_node(Node* n)
    printf("\n");
 }
 
-int is_valid(Node* n)
-{
-    int fila[9][10] = {0};
-    int columna[9][10] = {0};
-    int smatriz[9][10] = {0};
+int is_valid(Node *n) {
+    int fila[10];
+    int columna[10];
+    int submatriz[10];
 
     for (int i = 0; i < 9; i++)
     {
+        for (int k = 0; k < 10; k++)
+        {
+            fila[k] = 0;
+            columna[k] = 0;
+        }
+
         for (int j = 0; j < 9; j++)
         {
-            int data = n->sudo[i][j];
-            if (fila[i][data] == 1) return 0;
-            fila[i][data] = 1;
+            int num_fila = n->sudo[i][j];
+            if (num_fila != 0) {
+                if (fila[num_fila] == 1)
+                {
+                    return 0;
+                }
+                else
+                {
+                     fila[num_fila] = 1;
+                }
+            }
+
+            int num_columna = n->sudo[j][i];
+            if (num_columna != 0)
+            {
+                if (columna[num_columna] == 1)
+                {
+                    return 0;
+                }
+                else
+                {
+                    columna[num_columna] = 1;
+                }
+            }
         }
     }
-
-    for (int j = 0; j < 9; j++)
-    {
-        for (int i = 0; i < 9; i++)
-        {
-            int data = n->sudo[i][j];
-            if (columna[j][data] == 1) return 0;
-            columna[j][data] = 1;
-        }
-    }
-
+   
     for (int k = 0; k < 9; k++)
     {
+        for (int p = 0; p < 10; p++)
+        {
+            submatriz[p] = 0;
+        }
+
         for (int p = 0; p < 9; p++)
         {
             int i = 3 * (k / 3) + (p / 3);
             int j = 3 * (k % 3) + (p % 3);
+            int num_submatriz = n->sudo[i][j];
 
-            int data = n->sudo[i][j];
-            if (smatriz[k][data] == 1) return 0;
-            smatriz[k][data] = 1;
+            if (num_submatriz != 0) 
+            {
+                if (submatriz[num_submatriz] == 1)
+                {
+                    return 0;
+                }
+                else
+                {
+                    submatriz[num_submatriz] = 1;
+                }
+            }
         }
     }
-
     return 1;
 }
 
