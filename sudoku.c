@@ -141,7 +141,6 @@ List* get_adj_nodes(Node* n)
                      else free(adjacentNode);
                   }
             }
-            return list;
          }
    }
    return list;
