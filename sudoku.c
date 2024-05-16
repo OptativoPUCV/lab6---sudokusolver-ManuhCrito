@@ -162,9 +162,9 @@ int is_final(Node* n)
     return 1;
 }
 
-/*
 Node* DFS(Node* n, int* cont)
 {
+    /*
     Stack* stack = createStack();
     push(stack, n);
 
@@ -188,9 +188,9 @@ Node* DFS(Node* n, int* cont)
         free(adj_nodes);
         (*cont)++;
     }
+    */
     return NULL;
 }
-*/
 
 
 /*
