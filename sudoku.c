@@ -138,8 +138,10 @@ List* get_adj_nodes(Node* n)
                      adjacentNode->sudo[i][j] = k;
                      if (is_valid(adjacentNode))
                         pushBack(list, adjacentNode);
+                     else free(adjacentNode);
                   }
             }
+            return list;
          }
    }
    return list;
