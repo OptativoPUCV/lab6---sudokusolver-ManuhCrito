@@ -60,3 +60,14 @@ Thu 16 May 2024 07:45:50 PM UTC:
  tests:  5|3
 total_score: 35/70
 a262f37
+Thu 16 May 2024 07:49:45 PM UTC: 
+ sudoku.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:139:62: error: zero-length gnu_printf format string [-Werror=format-zero-length]
+  139 |                      if (is_valid(adjacentNode) == 0) printf("");
+      |                                                              ^~
+cc1: all warnings being treated as errors
+Compilation failed
+ef44099

@@ -136,10 +136,8 @@ List* get_adj_nodes(Node* n)
                   {
                      Node* adjacentNode = copy(n);
                      adjacentNode->sudo[i][j] = k;
-                     if (is_valid(adjacentNode) == 1)
-                     {
-                        pushBack(list, adjacentNode);
-                     }
+                     if (is_valid(adjacentNode) == 0) printf("");
+                     else pushBack(list, adjacentNode);
                   }
             }
          }
