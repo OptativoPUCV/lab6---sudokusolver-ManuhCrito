@@ -162,33 +162,29 @@ int is_final(Node* n)
     return 1;
 }
 
-Node* DFS(Node* n, int* cont)
-{
-    /*
+Node* DFS(Node* n, int* cont) {
     Stack* stack = createStack();
     push(stack, n);
 
-    while (stack != NULL)
-    {
+    while (!isEmpty(stack)) {
         Node* current = top(stack);
         pop(stack);
 
-        if (is_final(current))
+        if (is_final(current)) {
             return current;
+        }
 
         List* adj_nodes = get_adj_nodes(current);
         Node* temp = first(adj_nodes);
-        
-        while (temp != NULL)
-        {
+
+        while (temp != NULL) {
             push(stack, temp);
             temp = next(adj_nodes);
         }
-        
-        free(adj_nodes);
+
+        freeList(adj_nodes); // Liberar la lista de nodos adyacentes
         (*cont)++;
     }
-    */
     return NULL;
 }
 

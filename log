@@ -115,3 +115,19 @@ Thu 16 May 2024 08:09:08 PM UTC:
  tests:  6|2
 total_score: 45/70
 36df8f7
+Thu 16 May 2024 08:14:43 PM UTC: 
+ sudoku.c | 16 ++++++----------
+ 1 file changed, 6 insertions(+), 10 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:169:13: error: implicit declaration of function ‘isEmpty’; did you mean ‘is_empty’? [-Werror=implicit-function-declaration]
+  169 |     while (!isEmpty(stack)) {
+      |             ^~~~~~~
+      |             is_empty
+sudoku.c:185:9: error: implicit declaration of function ‘freeList’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+  185 |         freeList(adj_nodes); // Liberar la lista de nodos adyacentes
+      |         ^~~~~~~~
+      |         createList
+cc1: all warnings being treated as errors
+Compilation failed
+77dc1f8
